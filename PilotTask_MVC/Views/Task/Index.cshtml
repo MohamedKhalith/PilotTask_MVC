@@ -1,0 +1,34 @@
+﻿@model List<PilotTask_MVC.Models.Domain.TaskDetail>
+@{
+}
+<html>
+<body>
+    <h1>Task</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ProfileId</th>
+                <th>TaskName</th>
+                <th>TaskDescription</th>
+                <th>StartTime</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var profileData in Model)
+            {
+                <tr>
+                    <td>@profileData.ProfileId</td>
+                    <td>@profileData.TaskName</td>
+                    <td>@profileData.TaskDescription</td>
+                    <td>@profileData.StartTime</td>
+                    <td>@profileData.Status</td>
+                    <td><a href="Task/View/@profileData.ProfileId">Update</a></td>
+                    <td><a href="Task/Delete/@profileData.Id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

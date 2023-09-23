@@ -1,0 +1,27 @@
+﻿@model PilotTask_MVC.Models.CreateTaskData
+@{
+}
+<h1>Add Task</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="col-form-label">ProfileId</label>
+        <input type="text" class="form-control" asp-for="ProfileId">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">TaskName</label>
+        <input type="text" class="form-control" asp-for="TaskName">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">TaskDescription</label>
+        <input type="text" class="form-control" asp-for="TaskDescription">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">StartTime</label>
+        <input type="date" class="form-control" asp-for="StartTime">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">Status</label>
+        <input type="number" class="form-control" asp-for="Status">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@model PilotTask_MVC.Models.CreateProfileData
+@{
+}
+<h1>Add Profile</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="col-form-label">First Name</label>
+        <input type="text" class="form-control" asp-for="FirstName">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">Last Name</label>
+        <input type="text" class="form-control" asp-for="LastName">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">DateOfBirth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">PhoneNumber</label>
+        <input type="number" class="form-control" asp-for="PhoneNumber">
+    </div>
+    <div class="mb-3">
+        <label for="" class="col-form-label">Email Id</label>
+        <input type="email" class="form-control" asp-for="EmailId">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

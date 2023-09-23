@@ -1,0 +1,37 @@
+﻿@model PilotTask_MVC.Models.UpdateProfileData
+@{
+}
+
+<html>
+<body>
+    <h1>Edit Profile</h1>
+    <form method="post" action="View" class="mt-5">
+        <div class="mb-3">
+            <label for="" class="col-form-label">ProfileId</label>
+            <input type="text" class="form-control" asp-for="ProfileId">
+        </div>
+        <div class="mb-3">
+            <label for="" class="col-form-label">FirstName</label>
+            <input type="text" class="form-control" asp-for="FirstName">
+        </div>
+        <div class="mb-3">
+            <label for="" class="col-form-label">LastName</label>
+            <input type="text" class="form-control" asp-for="LastName">
+        </div>
+        <div class="mb-3">
+            <label for="" class="col-form-label">DateOfBirth</label>
+            <input type="date" class="form-control" asp-for="DateOfBirth">
+        </div>
+        <div class="mb-3">
+            <label for="" class="col-form-label">PhoneNumber</label>
+            <input type="number" class="form-control" asp-for="PhoneNumber">
+        </div>
+        <div class="mb-3">
+            <label for="" class="col-form-label">Email</label>
+            <input type="email" class="form-control" asp-for="EmailId">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="ProfileDetails">Delete</button>
+    </form>
+</body>
+</html>
