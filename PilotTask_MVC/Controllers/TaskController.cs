@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PilotTask_MVC.Data;
 using PilotTask_MVC.Models;
 using PilotTask_MVC.Models.Domain;
@@ -12,9 +13,11 @@ namespace PilotTask_MVC.Controllers
     public class TaskController : Controller
     {
         private readonly ProfileDbContext mVCDbContext;
-        public TaskController(ProfileDbContext mVCDbContext)
+        private readonly ILogger<TaskController> _logger;
+        public TaskController(ProfileDbContext mVCDbContext, ILogger<TaskController> logger)
         {
             this.mVCDbContext = mVCDbContext;
+            _logger = logger;
         }
         public IActionResult Add()
         {
@@ -30,8 +33,7 @@ namespace PilotTask_MVC.Controllers
             }
             catch(Exception ex)
             {
-                //have to to handle Logging but this time just print the console.
-                Console.WriteLine($"Exception Occured{ex}");
+                _logger.LogError(ex, "Exception error");
                 return RedirectToAction("Index", "ProfileDetails");
             }
             
@@ -57,8 +59,7 @@ namespace PilotTask_MVC.Controllers
             }
             catch(Exception ex)
             {
-                //have to to handle Logging but this time just print the console.
-                Console.WriteLine($"Exception Occured{ex}");
+                _logger.LogError(ex, "Exception error");
                 return RedirectToAction("Index", "ProfileDetails");
             }
             
@@ -86,8 +87,7 @@ namespace PilotTask_MVC.Controllers
             }
             catch(Exception ex)
             {
-                //have to to handle Logging but this time just print the console.
-                Console.WriteLine($"Exception Occured{ex}");
+                _logger.LogError(ex, "Exception error");
                 return RedirectToAction("Index", "ProfileDetails");
             }
             
@@ -113,8 +113,7 @@ namespace PilotTask_MVC.Controllers
             }
             catch (Exception ex)
             {
-                //have to to handle Logging but this time just print the console.
-                Console.WriteLine($"Exception Occured{ex}");
+                _logger.LogError(ex, "Exception error");
                 return RedirectToAction("Index", "ProfileDetails");
             }
 
@@ -138,8 +137,7 @@ namespace PilotTask_MVC.Controllers
             }
             catch (Exception ex)
             {
-                //have to to handle Logging but this time just print the console.
-                Console.WriteLine($"Exception Occured{ex}");
+                _logger.LogError(ex, "Exception error");
                 return RedirectToAction("Index", "ProfileDetails");
             }
 
